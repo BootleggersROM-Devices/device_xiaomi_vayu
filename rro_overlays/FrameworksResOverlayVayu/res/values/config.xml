@@ -804,4 +804,9 @@
     <!-- Whether the combined qs shows in status bar when true, the combined qs will not be available
          if set it to false  -->
     <bool name="flag_combined_qs_headers">false</bool>
+
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+    </string-array>
 </resources>
