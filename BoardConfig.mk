@@ -54,6 +54,7 @@ TARGET_DISABLED_UBWC := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
+MALLOC_SVELTE := true
 MALLOC_SVELTE_FOR_LIBC32 := true
 
 # Filesystem
@@ -90,9 +91,10 @@ BOARD_KERNEL_IMAGE_NAME := Image
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CONFIG := vayu_defconfig
   TARGET_KERNEL_SOURCE := kernel/xiaomi/vayu-mochi
-#  KERNEL_LD := LD=ld.lld
-#  TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar AS=llvm-as NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
-#  TARGET_KERNEL_ADDITIONAL_FLAGS := \
+  TARGET_KERNEL_CLANG_COMPILE := true
+  KERNEL_LD := LD=ld.lld
+  TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar AS=llvm-as NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+  TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 endif
 
