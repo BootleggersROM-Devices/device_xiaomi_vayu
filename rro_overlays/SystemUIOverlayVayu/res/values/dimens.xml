@@ -18,8 +18,6 @@
 <resources>
     <!-- the padding on the top of the statusbar (usually 0) -->
     <dimen name="status_bar_padding_top">8dp</dimen>
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">16dp</dimen>
     <!-- the padding on the end of the statusbar -->
     <dimen name="status_bar_padding_end">5dp</dimen>
     <!-- Margin on the left side of the carrier text on Keyguard -->
